@@ -31,7 +31,7 @@ jwt:
 
 mail:
   address:
-    admin: ${ADMIN_EMAIL}
+    admin: ${ADMIN_MAIL}
 
 api:
   ai:
