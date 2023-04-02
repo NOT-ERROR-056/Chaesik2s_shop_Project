@@ -87,8 +87,8 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
     $('#chat').scrollTop($('#chat')[0].scrollHeight);
 
     $("#chat").append("<div class='admin-block' id='lodding'>"
-        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#C2C2C2; align-self:flex-start;'></i>"
-        +"<p class='admin-chat'> 입력 중... </p>"
+        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#4a4a4a; align-self:flex-start;'></i>"
+        +"<p class='admin-chat' style='color:#5e5e5e;'> 입력 중... </p>"
         +"</div>");
 
     $('#chat').scrollTop($('#chat')[0].scrollHeight);
@@ -108,7 +108,7 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
       console.log(answer);
       $("#lodding").remove();
       $("#chat").append("<div class='admin-block'>"
-        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#C2C2C2; align-self:flex-start;'></i>"
+        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#4a4a4a; align-self:flex-start;'></i>"
         +"<p class='admin-chat'>"+answer+"</p>"
         +"</div>");
       $('#chat').scrollTop($('#chat')[0].scrollHeight);
@@ -153,7 +153,7 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
           <AIStyled.AdminBlock>
           <FontAwesomeIcon
                 icon={faRobot}
-                color='#c2c2c2'
+                color='#4a4a4a'
                 size='2x'
                 style={{ margin: '10px' }}
             />
