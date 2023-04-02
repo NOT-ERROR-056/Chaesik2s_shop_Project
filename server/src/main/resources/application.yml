@@ -27,12 +27,12 @@ jwt:
   access-token-expiration-minutes: 59
   refresh-token-expiration-minutes: 420
   key:
-    secret: sdkfsdklfjskldfnfkjerfhqjkwhejkasndjkansjkdflkjasdhfljkhdsjkdhsfjkslvkjasdnlkjndslkfnlsadnfsdfsadf
+    secret: ${JWT_SECRET_KEY}
 
 mail:
   address:
-    admin: zl@dfl.com
+    admin: ${ADMIN_EMAIL}
 
 api:
   ai:
-    key: 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
+    key: ${OPEN_AI_KEY}
