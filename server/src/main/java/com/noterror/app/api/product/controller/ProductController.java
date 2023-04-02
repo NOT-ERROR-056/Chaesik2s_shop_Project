@@ -1,5 +1,6 @@
 package com.noterror.app.api.product.controller;
 
+import com.noterror.app.api.entity.Vegetarian;
 import com.noterror.app.api.member.service.MemberService;
 import com.noterror.app.api.product.dto.ProductResponseDto;
 import com.noterror.app.api.product.dto.QueryParamDto;
@@ -9,6 +10,7 @@ import com.noterror.app.api.entity.member.Member;
 import com.noterror.app.api.global.response.MultiProductsResponse;
 import com.noterror.app.api.global.response.SingleProductResponse;
 import com.noterror.app.api.global.response.SortInfo;
+import com.noterror.app.api.vegetarian.VegetarianRepository;
 import com.noterror.app.infra.auth.MemberDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +33,7 @@ import java.util.stream.Collectors;
 public class ProductController {
 
     private final ProductService productService;
-    private final MemberService memberService;
+    private final VegetarianRepository vegetarianRepository;
 
     /**
      * 제품 개별 조회
@@ -40,8 +42,10 @@ public class ProductController {
     @GetMapping("/detail/{product-id}")
     public ResponseEntity getProduct(@PathVariable("product-id") Long productId) {
         Product findProduct = productService.findProduct(productId);
+        String vegetarianTypeOfProduct = findProduct.getVegetarianType();
+        List<Vegetarian> eatableList = vegetarianRepository.findVegetarianTypes(vegetarianTypeOfProduct);
         ProductResponseDto response = new ProductResponseDto(findProduct);
-        return new ResponseEntity(new SingleProductResponse(response), HttpStatus.OK);
+        return new ResponseEntity(new SingleProductResponse(response, eatableList), HttpStatus.OK);
     }
 
     /**

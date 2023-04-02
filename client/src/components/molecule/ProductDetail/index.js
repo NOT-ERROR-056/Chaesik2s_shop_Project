@@ -4,6 +4,7 @@ export const ProductInfoContainer = ({
   productData,
   quantity,
   setQuantity,
+  eatableVegetarianList,
 }) => {
   const plusCount = () => {
     // if (quantity < productData?.stockQuantity)
@@ -37,7 +38,7 @@ export const ProductInfoContainer = ({
         </Styled.ProductContent>
         <Styled.ProductContent>
           <Styled.ProductContentField>섭취가능유형</Styled.ProductContentField>
-          <Styled.ProductContentValue>플렉시테리언, 폴로-페스코, 페스코, 폴로, 락토-오보, 락토, 오보, 비건, 프루테리언</Styled.ProductContentValue>
+          <Styled.ProductContentValue>{eatableVegetarianList}</Styled.ProductContentValue>
         </Styled.ProductContent>
 
         <Styled.ProductContentSpace></Styled.ProductContentSpace>

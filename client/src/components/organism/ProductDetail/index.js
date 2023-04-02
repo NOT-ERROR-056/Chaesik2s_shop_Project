@@ -12,7 +12,7 @@ import { faHandPointRight, faMessage} from '@fortawesome/free-regular-svg-icons'
 import H1 from '../../atom/H1';
 import { faFeatherPointed, faRobot, faShare } from '@fortawesome/free-solid-svg-icons';
 
-export const ProductPage = ({ productId, productData }) => {
+export const ProductPage = ({ productId, productData, eatableVegetarianList }) => {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const tokenHeader = setTokenHeader();
@@ -116,6 +116,7 @@ export const ProductPage = ({ productId, productData }) => {
           productData={productData}
           quantity={quantity}
           setQuantity={setQuantity}
+          eatableVegetarianList={eatableVegetarianList}
         />
         <Styled.BtnBlock>
         <Styled.CartBtn onClick={AddToCartProduct}>
