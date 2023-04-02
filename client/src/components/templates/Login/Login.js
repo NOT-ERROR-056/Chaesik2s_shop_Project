@@ -41,7 +41,7 @@ const Index = () => {
         if (res.status === 200) {
           localStorage.setItem('JWT TOKEN', res.headers.authorization.slice(6));
           localStorage.setItem('JWT EXPIRATION', res.headers.expiration);
-          console.log(res.headers.expiration)
+          console.log("server date : " + res.headers.expiration);
           dispatch(setLoginChange(true));
           navigate('/');
         }

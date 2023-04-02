@@ -7,8 +7,8 @@ export const setTokenHeader = () => {
   const JWT_EXPIRATION = dayjs(localStorage.getItem('JWT EXPIRATION'),"YYYY-MM-DD HH:MM:SS").format();
   const currentDate = dayjs(Date.now(),"YYYY-MM-DD HH:MM:SS").format();
 
-  console.log(JWT_EXPIRATION);
-  console.log(currentDate);
+  console.log("JWT_EXPIRATION : " +JWT_EXPIRATION);
+  console.log("currentDate : " + currentDate);
   // Sun Apr 02 2023 18:23:15 GMT+0900 (한국 표준시)
 
   if (JWT_EXPIRATION !== null && JWT_EXPIRATION < currentDate) {

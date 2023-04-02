@@ -17,9 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.ZoneId;
+import java.util.*;
 
 /**
  * 로그인 인증 정보를 직접적으로 수신하여 인증처리의 엔트리포인트 역할
@@ -53,8 +52,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         String refreshToken = delegateRefreshToken(member);
 
         Date expiration = jwtTokenizer.getTokenExpiration(jwtTokenizer.getAccessTokenExpirationMinutes());
-        SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        SimpleDateFormat newDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREA);
+        newDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
         String expirationToDateFormat = newDateFormat.format(expiration);
+        System.out.println(expirationToDateFormat);
         response.setHeader("Expiration", expirationToDateFormat);
         response.setHeader("Authorization", "Bearer " + accessToken);
         response.setHeader("Refresh", refreshToken);
