@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface VegetarianRepository extends JpaRepository<Vegetarian, String> {
     @Query(nativeQuery = true,
-    value = "select * from vegetarian where levels < " +
+    value = "select * from vegetarian where levels > " +
             "(select levels from vegetarian where vegetarian_type = :vegetarianType) " +
             "or vegetarian_type = :vegetarianType")
     List<Vegetarian> findVegetarianTypes(@Param("vegetarianType") String vegetarianType);
