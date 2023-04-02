@@ -27,12 +27,12 @@ jwt:
   access-token-expiration-minutes: 1
   refresh-token-expiration-minutes: 420
   key:
-    secret: sdfkajsdfkasjhdfkljhsdjkfhsdnvjasnvsdanflkvjrkfjewfjsdlkfnsdkaljfklasdfsdjflksjalkfjsakldfjksdljfklsdfklja
+    secret: ${JWT_SECRET_KEY}
 
 mail:
   address:
-    admin: zlcls456@gmail.com
+    admin: ${ADMIN_EMAIL}
 
 api:
   ai:
-    key: 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
+    key: ${OPEN_AI_KEY}
