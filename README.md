@@ -36,7 +36,7 @@ http://chaesik2s.s3-website.ap-northeast-2.amazonaws.com/
 * JWT 토큰 Validation 에러 해결
 
 [자세한 내용은 옆에 링크 참고]
-https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/tree/v2.1.0_%EC%B1%84%EC%8B%9D%EC%9D%B4%EB%93%A4(%ED%98%84%EC%9E%AC)
+https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/blob/v2.1.0_%EC%B1%84%EC%8B%9D%EC%9D%B4%EB%93%A4(%ED%98%84%EC%9E%AC)/README.md
 
 ---
 
