@@ -79,10 +79,17 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
 
     event.preventDefault()
     var userInput = $("#user-input").val();
-    $("#user-input").val("");
+    $("#user-input").val("").attr("disabled",true).attr("placeholder","채식이가 대답하고 있어요!");
     $("#chat").append("<div class='user-block'>"
     + "<p class='user-chat'> " + userInput + "</p>"
     + "</div>");
+
+    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+
+    $("#chat").append("<div class='admin-block' id='lodding'>"
+        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#C2C2C2; align-self:flex-start;'></i>"
+        +"<p class='admin-chat'> 입력 중... </p>"
+        +"</div>");
 
     $('#chat').scrollTop($('#chat')[0].scrollHeight);
 
@@ -99,11 +106,13 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
     }).then(res => {
       const answer = res.data.answer;
       console.log(answer);
+      $("#lodding").remove();
       $("#chat").append("<div class='admin-block'>"
-      +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#C2C2C2; align-self:flex-start;'></i>"
-      +"<p class='admin-chat'>" + answer +"</p>"
-      +"</div>");
+        +"<i class='fa-solid fa-robot fa-2x' style='margin:10px; color:#C2C2C2; align-self:flex-start;'></i>"
+        +"<p class='admin-chat'>"+answer+"</p>"
+        +"</div>");
       $('#chat').scrollTop($('#chat')[0].scrollHeight);
+      $("#user-input").attr("disabled", false).attr("placeholder",'현재 제품이 회원님의 채식 유형과 적합한지 물어보세요.');
     });
   }
 
@@ -128,6 +137,7 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
           <Styled.BuyBtn onClick={BuyProduct}>구매하기</Styled.BuyBtn>
           )}
         </Styled.BtnBlock>
+
         {/* chatGPT-API HELPER */}
         <AIStyled.AIHelperBlock>
           <AIStyled.AIHelperTitle>
@@ -153,7 +163,7 @@ export const ProductPage = ({ productId, productData, eatableVegetarianList }) =
 
           <AIStyled.AIHelperInputBox>
             <AIStyled.AIHelperForm onSubmit={ReqeustChatGptAPI}>
-              <AIStyled.AIHelperInput id="user-input" placeholder='현재 제품이 본인의 채식 유형과 적합한지 물어보세요!'></AIStyled.AIHelperInput>
+              <AIStyled.AIHelperInput id="user-input" placeholder='현재 제품이 회원님의 채식 유형과 적합한지 물어보세요.'></AIStyled.AIHelperInput>
               <AIStyled.AIHelperButton type="submit">
                 <FontAwesomeIcon
                   icon={faShare} color='#fff' size='lg'/>
