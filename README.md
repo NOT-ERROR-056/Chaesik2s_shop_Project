@@ -1,5 +1,8 @@
 # 개인 맞춤형 채식 쇼핑몰 웹 애플리케이션, **채식이들 🥗**
 
+<a href="http://chaesik2s.s3-website.ap-northeast-2.amazonaws.com/">
+  <img width="150" height="30" src="https://img.shields.io/badge/(v2)채식이들 배포 링크-6ba544?style=for-the-badge&logo=one&logoColor=black"></a>
+
 <a href="http://chaesik2s.shop/">
   <img width="150" height="30" src="https://img.shields.io/badge/(v1)채식이들 배포 링크-ffffff?style=for-the-badge&logo=one&logoColor=black"></a>
   
@@ -21,16 +24,19 @@
 ## 채식이들 버전 이력
 
 ### v2.1.0 (CURRENT REALEASE)
+
 [배포 링크]
+http://chaesik2s.s3-website.ap-northeast-2.amazonaws.com/
 
 [요약]
 * __ChatGPT 기반 AI 대화형 큐레이션 기능__
 * 사용자 맞춤 UI 수정
 * 제품 재고 수량에 맞는 품절, 품절임박 태그 추가 / 장바구니의 제품이 품절일 경우 품절 표시
 * 코드 리팩토링 및 API 통신 트러블 슈팅
-* 제품 추가 Admin 페이지 생성
+* JWT 토큰 Validation 에러 해결
 
 [자세한 내용은 옆에 링크 참고]
+https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/tree/v2.1.0_%EC%B1%84%EC%8B%9D%EC%9D%B4%EB%93%A4(%ED%98%84%EC%9E%AC)
 
 ---
 
@@ -72,8 +78,6 @@ v2 : `2023.03 ~ 2023.04`
 * 대체품, 야채류 제품만 나열되어 있는 기존 채식 쇼핑몰과 다른 차별점 보유
 * UI//UX 부분에 채식 유형 정보를 알 수 있도록 제작하여 사용자 경험 극대화
 * 채식에 대한 정확한 인식으로 다양한 채식 유형의 소비자들에게 편한 쇼핑 서비스 제공
-
-
 
 <br>
 
