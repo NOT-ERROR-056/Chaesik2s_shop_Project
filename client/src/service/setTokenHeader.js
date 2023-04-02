@@ -4,7 +4,7 @@ export const setTokenHeader = () => {
   
   // Sun Apr 02 17:44:35 KST 2023 -> dayjs.toDate()
   // type오브
-  const JWT_EXPIRATION = dayjs(localStorage.getItem('JWT EXPIRATION'),"YYYY-MM-DD HH:MM::SS").format();
+  const JWT_EXPIRATION = dayjs(localStorage.getItem('JWT EXPIRATION'),"YYYY-MM-DD HH:MM:SS").format();
   const currentDate = dayjs(Date.now(),"YYYY-MM-DD HH:MM:SS").format();
 
   console.log(JWT_EXPIRATION);
