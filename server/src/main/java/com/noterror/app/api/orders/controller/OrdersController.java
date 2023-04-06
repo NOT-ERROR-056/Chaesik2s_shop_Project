@@ -73,7 +73,10 @@ public class OrdersController {
     public ResponseEntity orderProductsInCart() {
         Cart cartOfMember = getCartByMember();
         Orders newOrder = ordersService.orderProductsInCart(cartOfMember);
+
+        // 장바구니에 제품 주문이 성공하면, 장바구니 내역 전체 삭제 기능이 수행
         cartService.successOrderAndDeleteCartAll(cartOfMember);
+
         OrderResponseDto response = new OrderResponseDto(newOrder);
         return new ResponseEntity(
                 new SingleOrderResponse(response), HttpStatus.OK);
