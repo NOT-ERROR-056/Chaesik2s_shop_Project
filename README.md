@@ -25,7 +25,7 @@
 
 ### v2.0.0
 
-> 자세한 내용은 [TAG] 를 확인해주세요.
+> 자세한 내용은 [TAG](https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/releases/tag/v2) 를 확인해주세요.
 
 [업데이트 내용 요약]
 * __ChatGPT 기반 AI 대화형 큐레이션 기능 개발__
