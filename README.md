@@ -1,10 +1,10 @@
 # 개인 맞춤형 채식 쇼핑몰 웹 애플리케이션, **채식이들 🥗**
 
 <a href="http://chaesik2s.s3-website.ap-northeast-2.amazonaws.com/" disabled>
-  <img width="150" height="30" src="https://img.shields.io/badge/(v2)채식이들 배포 -808080?style=for-the-badge&logo=one&logoColor=black"></a>
+  <img width="150" height="30" src="https://img.shields.io/badge/(v2) 배포 중단-808080?style=for-the-badge&logo=one&logoColor=black"></a>
 
 <a href="http://chaesik2s.shop/">
-  <img width="150" height="30" src="https://img.shields.io/badge/(v1)채식이들 배포 링크-ffffff?style=for-the-badge&logo=one&logoColor=black"></a>
+  <img width="150" height="30" src="https://img.shields.io/badge/(v1) 배포 링크-ffffff?style=for-the-badge&logo=one&logoColor=black"></a>
   
 <a href="https://wheat-pansy-652.notion.site/83aa93341f2c47cf8e0048804587dcfb">
     <img width="150" height="30" src="https://img.shields.io/badge/기획 및 설계 문서-ffffff?style=for-the-badge&logo=notion&logoColor=black"></a>
