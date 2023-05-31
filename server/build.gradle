@@ -59,10 +59,7 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
-    //rest docs
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-    implementation 'org.springframework.restdocs:spring-restdocs-asciidoctor'
-    implementation 'com.google.code.gson:gson'
+    // ChatGPT api 전송을 위한 JSON 라이브러리 주입
     implementation 'org.json:json:20220924'
 }
 
