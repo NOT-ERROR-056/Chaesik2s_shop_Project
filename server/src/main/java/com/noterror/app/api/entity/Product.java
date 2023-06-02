@@ -6,6 +6,8 @@ import com.noterror.app.api.entity.order.OrderDetail;
 import com.noterror.app.api.global.audit.Auditable;
 import com.noterror.app.api.global.exception.BusinessLogicException;
 import com.noterror.app.api.global.exception.ExceptionCode;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
 import lombok.*;
 
 import javax.persistence.*;
