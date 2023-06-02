@@ -60,7 +60,12 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
     // ChatGPT api 전송을 위한 JSON 라이브러리 주입
+    implementation 'com.google.code.gson:gson'
     implementation 'org.json:json:20220924'
+
+    // swagger (REST API docs)
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 }
 
 tasks.named('test') {
