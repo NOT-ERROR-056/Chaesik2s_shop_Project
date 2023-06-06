@@ -35,6 +35,20 @@ Spring Boot
 
 ### API 명세서
 
+* (Springfox) Swagger
+* Swagger UI
+
+> **Swagger 선택 이유**
+> 프로젝트 초기에는 SpringRestDocs 를 사용함. 코드 및 서비스가 확장될 수록 테스트 오류가 심해짐 <br>
+> MockMVC 사용으로 인해 SpringSecurity 설정이 제외됨. 따라서 모든 테스트가 401 에러 출력 <br>
+> `@Import`와 `@WithMockUser` 를 사용하여 문제를 해결하며 문서 자동화 진행 <br>
+> MockBean에서 NullPointerException 발생 <br>
+> <br>
+> **Swagger 로 전략 변경**
+> 1) 많은 도메인의 api 문서를 처음부터 만들면서, 테스트까지 통과시켜야하니 task 부담이 큼
+> 2) Spring rest docs는 tdd 에 더 적합한 느낌
+> 3) 현재 우선순위는 API 문서를 빠르게 구현하는 것이기 때문에 Swagger 결정
+
 ---
 
 ### 배포
