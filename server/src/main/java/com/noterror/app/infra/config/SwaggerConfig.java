@@ -22,14 +22,15 @@ import java.util.List;
 @Configuration
 public class SwaggerConfig {
 
+    public static final String VERSION = "2.1.0";
+
     @Bean
     public Docket apiV1() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("groupName1")
+                .groupName(VERSION)
                 .select()
                 .apis(RequestHandlerSelectors.
                         basePackage("com.noterror.app.api"))
-                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
     }
@@ -37,8 +38,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("채식이들 API 문서")
-                .description("api 문서")
-                .version("2.1.0")
+                .description("초기에 Spring REST docs 를 통해 API 문서를 자동화했으나, 테스트 코드에 잦은 오류를 겪게 되었습니다. 따라서 Swagger 를 적용하게 되었습니다.")
+                .version(VERSION)
                 .build();
     }
 }
