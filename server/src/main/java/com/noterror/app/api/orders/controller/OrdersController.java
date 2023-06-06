@@ -15,6 +15,9 @@ import com.noterror.app.api.global.exception.BusinessLogicException;
 import com.noterror.app.api.global.exception.ExceptionCode;
 import com.noterror.app.api.global.response.MultiOrdersResponse;
 import com.noterror.app.api.global.response.SingleOrderResponse;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -27,6 +30,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Api(tags = {"FRONT-OFFICE", "ORDER"})
 @RestController
 @RequestMapping("/order")
 @RequiredArgsConstructor
@@ -42,9 +46,10 @@ public class OrdersController {
      * 주문 내역 조회
      * 페이지네이션 기능 추가
      */
+    @ApiOperation(value = "주문 내역 조회 API", notes = "주문 내역 리스트를 출력합니다.")
     @GetMapping("/list")
-    public ResponseEntity getOrderList(@RequestParam(required = false, defaultValue = "1") int page,
-                                       @RequestParam(required = false, defaultValue = "10") int size) {
+    public ResponseEntity<MultiOrdersResponse> getOrderList(@RequestParam(required = false, defaultValue = "1") int page,
+                                                            @RequestParam(required = false, defaultValue = "10") int size) {
 
         Page<Orders> ordersInPage = ordersService.getOrderList(getMemberByEmail(), page, size);
         List<OrderResponseDto> response = toListOfOrderResponses(ordersInPage);
@@ -55,9 +60,11 @@ public class OrdersController {
     /**
      * 단일 주문
      */
+    @ApiOperation(value = "단일 주문 API", notes = "단일 제품을 주문합니다.")
     @PostMapping("/product/{product-id}")
-    public ResponseEntity OrderSingleProduct(@PathVariable("product-id") Long productId,
-                                             @RequestBody @Valid OrderDetailDto orderDetailDto) {
+    public ResponseEntity<SingleOrderResponse<Orders>> OrderSingleProduct(
+            @ApiParam(value = "제품 ID", required = true, example = "1") @PathVariable("product-id") Long productId,
+            @RequestBody @Valid OrderDetailDto orderDetailDto) {
         OrderDetail currentOrderProductInfo = getOrderDetail(productId, orderDetailDto);
         Orders singleOrder = setOrderInfo(currentOrderProductInfo);
         Orders newOrder = ordersService.orderProduct(singleOrder);
@@ -69,8 +76,9 @@ public class OrdersController {
     /**
      * 장바구니 내역 전체 주문
      */
+    @ApiOperation(value = "장바구니 전체 주문 API", notes = "장바구니에 제품 리스트 전체를 주문합니다.")
     @PostMapping("/cart")
-    public ResponseEntity orderProductsInCart() {
+    public ResponseEntity<SingleOrderResponse<Orders>> orderProductsInCart() {
         Cart cartOfMember = getCartByMember();
         Orders newOrder = ordersService.orderProductsInCart(cartOfMember);
 
