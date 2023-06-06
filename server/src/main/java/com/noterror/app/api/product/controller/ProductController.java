@@ -44,7 +44,7 @@ public class ProductController {
     @ApiOperation(value = "제품 단일 조회 API", notes = "제품 ID로 제품을 조회합니다.")
     @GetMapping("/detail/{product-id}")
     public ResponseEntity<SingleProductResponse<Product>> getProduct(
-            @ApiParam(value = "제품 ID", required = true, example = "1L") @PathVariable("product-id") Long productId) {
+            @ApiParam(value = "제품 ID", required = true, example = "1") @PathVariable("product-id") Long productId) {
         Product findProduct = productService.findProduct(productId);
         String vegetarianTypeOfProduct = findProduct.getVegetarianType();
         List<Vegetarian> eatableList = vegetarianRepository.findVegetarianTypes(vegetarianTypeOfProduct);
