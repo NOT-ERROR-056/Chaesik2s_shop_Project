@@ -60,7 +60,7 @@ public class ProductController {
      */
     @ApiOperation(value = "제품 전체 조회 API", notes = "필터, 채식 유형에 맞는 제품 리스트를 페이지 단위로 출력합니다.")
     @GetMapping("/list")
-    public ResponseEntity getProducts(@ApiParam(required = false) @RequestParam(required = false, defaultValue = "1") int page,
+    public ResponseEntity<MultiProductsResponse<Product>> getProducts(@ApiParam(required = false) @RequestParam(required = false, defaultValue = "1") int page,
                                       @ApiParam(required = false) @RequestParam(required = false, defaultValue = "20") int size,
                                       @ApiParam(required = false) @RequestParam(required = false, defaultValue = "create_date") String sort,
                                       @ApiParam(required = false) @RequestParam(required = false, defaultValue = "desc") String orderBy,
