@@ -38,12 +38,6 @@ public class OrderDetail {
             orders.addOrderDetail(this);
         }
     }
-    public void addProduct(Product product) {
-        this.product = product;
-        if (!product.getOrderDetails().contains(this)) {
-            product.addOrdersDetail(this);
-        }
-    }
 
     public Orders toOrdersWithMember(Member member) {
         this.orders.addMember(member);
