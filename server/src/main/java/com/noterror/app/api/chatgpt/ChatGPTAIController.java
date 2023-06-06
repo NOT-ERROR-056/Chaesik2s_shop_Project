@@ -1,6 +1,9 @@
 package com.noterror.app.api.chatgpt;
 
 import com.noterror.app.api.global.response.AiAnswerResponse;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 
+@Api(tags = {"FRONT-OFFICE", "CHAT_AI"})
 @RestController
 @RequestMapping("/api")
 @Slf4j
@@ -26,8 +30,9 @@ public class ChatGPTAIController {
     @Value("${api.ai.key}")
     private String openAiKey;
 
+    @ApiOperation(value = "AI 대화형 큐레이션 기", notes = "대화형 AI를 통해 고객과 제품의 적합도 정보를 제공합니다.")
     @PostMapping("/helper")
-    public ResponseEntity postChatGPTApi(@RequestBody Map<String, String> userInput) throws Exception {
+    public ResponseEntity<AiAnswerResponse> postChatGPTApi(@ApiParam(value = "사용자의 입력 내용") @RequestBody Map<String, String> userInput) throws Exception {
 
         String text = userInput.get("text");
         log.info("Input : {}", text);
