@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.HashMap;
 
-@Api(tags = {"front office", "members"})
+@Api(tags = {"FRONT-OFFICE", "MEMBER"})
 @RestController
 @Validated
 @RequestMapping(value = "/members")
@@ -33,7 +33,7 @@ public class MemberController {
     @ApiOperation(value = "일반 회원가입 API", notes = "회원가입 폼 데이터에 새로운 회원을 생성하여 DB에 저장합니다.")
     @ApiResponse(code = 201, message = "created")
     @PostMapping("/sign-up")
-    public ResponseEntity<MemberResponseDto> postMember(@RequestBody @Valid SignUpDto signUpDto) {
+    public ResponseEntity<MemberResponseDto> postMember(@ApiParam(value = "회원가입정보") @RequestBody @Valid SignUpDto signUpDto) {
         Member member = signUpDto.toEntity();
         Long newMemberId = memberService.saveMemberInfo(member);
 
@@ -44,12 +44,12 @@ public class MemberController {
     /**
      * 채식 유형 등록
      */
-    @ApiOperation(value = "채식주의자 유형 정보 저장 API", notes = "회원가입 후, 본인의 채식주의자 유형을 선택합니다.")
+    @ApiOperation(value = "채식주의자 유형 정보 저장 API", notes = "회원가입 완료 후, 회원ID에 해당하는 회원의 채식주의자 유형을 선택합니다.")
     @ApiResponse(code = 200, message = "ok")
     @PostMapping("/sign-up/type/{member-id}")
-    public ResponseEntity<MemberResponseDto> postVegetarianTypeOfNewMember(
-            @ApiParam(example = "1") @PathVariable("member-id") Long memberId,
-            @ApiParam(value = "비건",example = "vegetarianType : 비건") @RequestBody HashMap<String, String> vegetarianType) {
+    public ResponseEntity<SingleMemberResponse<Member>> postVegetarianTypeOfNewMember(
+            @ApiParam(value = "회원 ID",example = "1") @PathVariable("member-id") Long memberId,
+            @ApiParam(value = "채식주의자 유형",example = "vegetarianType : 비건") @RequestBody HashMap<String, String> vegetarianType) {
 
         Member member = memberService.saveTypeOfNewMember(memberId, vegetarianType.get("vegetarianType"));
         MemberResponseDto response = new MemberResponseDto(member);
@@ -64,14 +64,14 @@ public class MemberController {
     @ApiOperation(value = "회원 정보 수정 API", notes = "회원의 정보를 수정합니다.")
     @ApiResponse(code = 200, message = "ok")
     @PutMapping("/info")
-    public ResponseEntity putMember(
-            @ApiParam @RequestBody @Valid UpdateInfoDto updateInfoDto) {
+    public ResponseEntity<SingleMemberResponse<Member>> putMember(
+            @ApiParam(value = "회원 정보 수정 데이터") @RequestBody @Valid UpdateInfoDto updateInfoDto) {
         Member updateInfo = updateInfoDto.toEntityWithEmail(currentUserEmail());
         Member updateMember = memberService.updateMember(updateInfo);
         MemberResponseDto response = new MemberResponseDto(updateMember);
 
-        return new ResponseEntity<>(
-                new SingleMemberResponse<>(response), HttpStatus.OK);
+        return new ResponseEntity(
+                new SingleMemberResponse(response), HttpStatus.OK);
     }
 
     /**
@@ -80,10 +80,10 @@ public class MemberController {
     @ApiOperation(value = "회원 정보 조회 API", notes = "회원의 정보를 조회합니다.")
     @ApiResponse(code = 200, message = "ok")
     @GetMapping("/info")
-    public ResponseEntity getMember() {
+    public ResponseEntity<SingleMemberResponse<Member>> getMember() {
         Member findMember = memberService.findMemberByEmail(currentUserEmail());
         MemberResponseDto response = new MemberResponseDto(findMember);
-        return new ResponseEntity<>(
+        return new ResponseEntity(
                 new SingleMemberResponse(response), HttpStatus.OK);
     }
 
