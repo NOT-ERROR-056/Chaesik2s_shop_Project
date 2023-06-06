@@ -1,10 +1,4 @@
 # 개인 맞춤형 채식 쇼핑몰 웹 애플리케이션, **채식이들 🥗**
-
-<a href="http://chaesik2s.s3-website.ap-northeast-2.amazonaws.com/" disabled>
-  <img width="150" height="30" src="https://img.shields.io/badge/(v2) 배포 중단-808080?style=for-the-badge&logo=one&logoColor=black"></a>
-
-<a href="http://chaesik2s.shop/">
-  <img width="150" height="30" src="https://img.shields.io/badge/(v1) 배포 링크-ffffff?style=for-the-badge&logo=one&logoColor=black"></a>
   
 <a href="https://wheat-pansy-652.notion.site/83aa93341f2c47cf8e0048804587dcfb">
     <img width="150" height="30" src="https://img.shields.io/badge/기획 및 설계 문서-ffffff?style=for-the-badge&logo=notion&logoColor=black"></a>
@@ -17,13 +11,13 @@
 
 <br>
 
-<img width="1200" alt="스크린샷 2022-10-10 오후 5 57 07" src="https://user-images.githubusercontent.com/95335294/194830808-1122b293-33c3-4e61-aab9-f92db5d0622b.png">
+<img width="800" alt="스크린샷 2022-10-10 오후 5 57 07" src="https://user-images.githubusercontent.com/95335294/194830808-1122b293-33c3-4e61-aab9-f92db5d0622b.png">
 
 <br>
 
 ## 채식이들 버전 이력
 
-### v2.0.0
+### v2.0.0 `CURRENT`
 
 > 자세한 내용은 [TAG](https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/releases/tag/v2) 를 확인해주세요.
 
@@ -33,23 +27,6 @@
 * __장바구니에 제품 주문시, 장바구니 내역 삭제 기능 구현__
 * 제품 재고 수량에 맞는 품절, 품절임박 태그 추가 / 장바구니의 제품이 품절일 경우 품절 표시
 * 코드 리팩토링 및 API 통신 트러블 슈팅
-
-[배포]
-
-> ### V2 비용 문제로 배포 임시 중단
-> __이유__ <br>
-> > 초기 AWS EC2 프리 티어 제품(t2.micro)으로 배포하려 했으나, 너무 심한 Time delay로 인해 실패 <br>
-> > 따라서 빠른 배포와 임시 오픈을 목표로 등급을 높여서 배포 <br>
-> > 30일이 지났을 때, 감당하기 힘든 비용 발생 <br>
-> 
-> __느낀점__ <br>
-> > '최소한의 비용으로 최대한의 성능으로 개선하는 것'이 백엔드 개발자의 중요한 역할이라고 뼈저리게 느꼈다.
-> 
-> 배포 계획 
-> * 비용 절감을 위해 클라우드 서버가 자동 슬립 모드로 설정하는 방법을 학습하고 적용
-> * (단점) 링크를 클릭할 때 서비스가 깨어나기 때문에 첫 시작이 느림
-> * 하지만 실제로 트래픽이 발생하는 서비스가 아니기 때문에 이와 같은 배포 전략을 선택
-
 
 ---
 
@@ -77,17 +54,24 @@ v2 : `2023.03 ~ 2023.04`
 
 ### ▫️ 기획 배경
 
-* 소비자들의 채식 유형에 해당하는 제품을 편하게 구매할 수 있도록 제공하고자 함
+* 채식주의자가 일반 쇼핑 서비스에서 본인에게 적합한 식품을 찾는데, **긴 시간이 발생한다는 문제를 발견**
+* 고객 맞춤의 차별적인 서비스를 제공하여, 빠르고 편리한 쇼핑 경험을 제공하고자 함.
 
 ### ▫️ 핵심 기능
 
-* 본인이 설정한 **채식 유형**에 맞는 **식제품 노출** 기능
+* 본인이 설정한 **채식주의자 유형**에 맞는 **식제품 노출** 기능
+* 고객과 제품 적합도 정보 제공을 위한, **AI 대화형 큐레이션 기능**
+
+### ▫️ 참고자료
+
+> 식단에 따라 분류된 9가지 채식주의자 유형입니다.
 
 <img width="800" alt="스크린샷 2022-10-10 오후 8 10 04" src="https://user-images.githubusercontent.com/95335294/194853396-37863935-c13e-4e51-b492-0c087e5bb570.png">
 
 ### ▫️ 서비스 특징
 
 * 플렉시테리언, 폴로-페스코, 페스코, 폴로, 락토-오보, 락토, 오보, 비건, 프루테리언 등 채식 유형에 맞게 상품 데이터 분류
+* AI를 도입하여 원하는 제품을 찾는데 발생하는 시간 50% 단축
 * 대체품, 야채류 제품만 나열되어 있는 기존 채식 쇼핑몰과 다른 차별점 보유
 * UI//UX 부분에 채식 유형 정보를 알 수 있도록 제작하여 사용자 경험 극대화
 * 채식에 대한 정확한 인식으로 다양한 채식 유형의 소비자들에게 편한 쇼핑 서비스 제공
@@ -96,12 +80,12 @@ v2 : `2023.03 ~ 2023.04`
 
 ## 👨🏻‍💻 Member
 
-|[<img src="https://avatars.githubusercontent.com/u/79829085?v=4" width="160px;" alt=""/>](https://github.com/Si-Hyeak-KANG) |[<img src="https://avatars.githubusercontent.com/u/98000922?v=4" width="160px" >](https://github.com/Juniverse)|[<img src="https://avatars.githubusercontent.com/u/95335294?v=4" width="160px">](https://github.com/hongmj37)|[<img src="https://avatars.githubusercontent.com/u/98211110?v=4" width="160px" >](https://github.com/HYUNSUK331)|
+|[<img src="https://avatars.githubusercontent.com/u/79829085?v=4" width="130px;" alt=""/>](https://github.com/Si-Hyeak-KANG) |[<img src="https://avatars.githubusercontent.com/u/98000922?v=4" width="130px" >](https://github.com/Juniverse)|[<img src="https://avatars.githubusercontent.com/u/95335294?v=4" width="130px">](https://github.com/hongmj37)|[<img src="https://avatars.githubusercontent.com/u/98211110?v=4" width="130px" >](https://github.com/HYUNSUK331)|
 |:---:|:---:|:---:|:---:|
 |[BE 강시혁](https://github.com/Si-Hyeak-KANG) |[BE 황윤준](https://github.com/YunJuniverse)|[BE 홍민정](https://github.com/hongmj37) |[BE 이현석](https://github.com/HYUNSUK331)|
 |🌟Team Leader|BE_CTO| GitHub 책임자 |배포 담당자|
 
-|[<img src="https://avatars.githubusercontent.com/u/61141988?v=4" width="160px;" alt=""/>](https://github.com/Hong-sk) |[<img src="https://avatars.githubusercontent.com/u/94218285?v=4" width="160px">](https://github.com/git-daun)|[<img src="https://avatars.githubusercontent.com/u/94212747?v=4" width="160px" >](https://github.com/NR0617)|
+|[<img src="https://avatars.githubusercontent.com/u/61141988?v=4" width="130px;" alt=""/>](https://github.com/Hong-sk) |[<img src="https://avatars.githubusercontent.com/u/94218285?v=4" width="130px">](https://github.com/git-daun)|[<img src="https://avatars.githubusercontent.com/u/94212747?v=4" width="130px" >](https://github.com/NR0617)|
 |:---:|:---:|:---:|
 |[FE 홍성권](https://github.com/Hong-sk) |[FE 정다운](https://github.com/git-daun) |[FE 오나래](https://github.com/NR0617)|
 |FE_CTO|팀블로그 관리|회의록 |
@@ -109,6 +93,8 @@ v2 : `2023.03 ~ 2023.04`
 <br>
 
 ## 🫧 Skill
+
+> 기술에 대한 자세한 설명은 각 경로([client](https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/tree/main/client), [server](https://github.com/NOT-ERROR-056/Chaesik2s_shop_Project/tree/main/server))를 확인해주세요.
 
 ### ▪️ Frontend
 
