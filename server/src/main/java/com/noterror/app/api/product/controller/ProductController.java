@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Api(value = "hello", tags = {"front office","products"})
+@Api(tags = {"FRONT-OFFICE", "PRODUCT"})
 @RestController
 @Slf4j
 @Validated
@@ -43,8 +43,8 @@ public class ProductController {
      */
     @ApiOperation(value = "제품 단일 조회 API", notes = "제품 ID로 제품을 조회합니다.")
     @GetMapping("/detail/{product-id}")
-    public ResponseEntity getProduct(
-            @ApiParam(value = "제품 ID", required = true, example = "1") @PathVariable("product-id") Long productId) {
+    public ResponseEntity<SingleProductResponse<Product>> getProduct(
+            @ApiParam(value = "제품 ID", required = true, example = "1L") @PathVariable("product-id") Long productId) {
         Product findProduct = productService.findProduct(productId);
         String vegetarianTypeOfProduct = findProduct.getVegetarianType();
         List<Vegetarian> eatableList = vegetarianRepository.findVegetarianTypes(vegetarianTypeOfProduct);

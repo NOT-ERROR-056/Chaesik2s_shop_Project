@@ -10,9 +10,10 @@ import java.util.stream.Collectors;
 @Getter
 public class SingleProductResponse<T> {
 
+    @ApiModelProperty(notes = "제품 정보")
     private T product;
 
-    @ApiModelProperty(notes = "제품을 섭취할 수 있는 유형", example = "비건")
+    @ApiModelProperty(value = "섭취 가능한 유형 리스트", dataType = "list")
     private List<String> eatableVegetarian;
 
     public SingleProductResponse(T product, List<Vegetarian> eatableVegetarian) {
