@@ -45,21 +45,6 @@ public class Product extends Auditable {
 
     private String vegetarianType;
 
-    @OneToMany(mappedBy = "product")
-    @JsonBackReference
-    private List<OrderDetail> orderDetails = new ArrayList<>();
-
-    @OneToMany(mappedBy = "product")
-    @JsonBackReference
-    private List<CartDetail> cartDetail = new ArrayList<>();
-
-    //== BUSINESS LOGIC ==//
-    public void addOrdersDetail(OrderDetail orderDetail) {
-        this.orderDetails.add(orderDetail);
-        if (orderDetail.getProduct() != this) {
-            orderDetail.addProduct(this);
-        }
-    }
 
     public void updateInfo(Product request) {
         this.productName = request.getProductName();
