@@ -98,13 +98,13 @@ v2 : `2023.03 ~ 2023.04`
 
 ### ▪️ Frontend
 
-<img width="800" alt="스크린샷 2022-10-10 오후 8 09 19" src="https://user-images.githubusercontent.com/95335294/194853665-2b0631fb-cc23-4926-80b7-0027cf7ef43e.png">
+<img width="700" alt="스크린샷 2022-10-10 오후 8 09 19" src="https://user-images.githubusercontent.com/95335294/194853665-2b0631fb-cc23-4926-80b7-0027cf7ef43e.png">
 
 <br>
 
 ### ▪️ Backend 
 
-<img width="800" alt="스크린샷 2022-10-10 오후 6 58 01" src="https://user-images.githubusercontent.com/95335294/194841207-ce338cc0-affd-4dc6-96a4-71c435d56147.png">
+<img width="700" alt="스크린샷 2022-10-10 오후 6 58 01" src="https://user-images.githubusercontent.com/95335294/194841207-ce338cc0-affd-4dc6-96a4-71c435d56147.png">
 
 <br>
 
@@ -123,13 +123,13 @@ v2 : `2023.03 ~ 2023.04`
 
 ## 🗓 Schedule
 
-<img width="800" alt="스크린샷 2022-10-10 오후 6 12 46" src="https://user-images.githubusercontent.com/95335294/194833392-e2e80799-6152-4e2d-af85-cf9b011d5ffd.png">
+<img width="700" alt="스크린샷 2022-10-10 오후 6 12 46" src="https://user-images.githubusercontent.com/95335294/194833392-e2e80799-6152-4e2d-af85-cf9b011d5ffd.png">
 
 <br>
 
 ## 📝 Version
 
-<img width="800" alt="스크린샷 2022-10-10 오후 6 14 00" src="https://user-images.githubusercontent.com/95335294/194833583-9fa2f005-185f-48b0-94c7-a7baeff797cd.png">
+<img width="700" alt="스크린샷 2022-10-10 오후 6 14 00" src="https://user-images.githubusercontent.com/95335294/194833583-9fa2f005-185f-48b0-94c7-a7baeff797cd.png">
 
 <br>
 
